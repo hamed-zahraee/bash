@@ -1,0 +1,64 @@
+#!/bin/bash
+
+
+INTERVAL=5
+NUMBER=12
+COMMAND="date"
+
+echo Please Enter Interval:
+read interval
+INT=$interval
+
+echo Please Enter Retry count:
+read retry
+RCNT=$retry
+
+echo Please Enter Command:
+read cmd
+CMD=$cmd
+
+
+EXEC=`$CMD`
+RES=$?
+case $RES in 
+0)
+ EXEC=`$CMD`
+  echo "$EXEC"
+  echo Done!
+  
+  if [[ $? -ne "" ]] ; then
+   EXEC=`$COMMAND`
+   echo you dont enter command
+   else 
+   echo hamed
+  fi
+;;
+127)
+ for A in $(seq 1 $RCNT) ; do
+   A=`$CMD`
+    echo "$A"
+   sleep "$INT"
+ done
+ ;;
+*)
+esac
+
+
+ if [[ $# -ne 0 ]] ; then
+  TRY-COMMAND=$*
+ fi
+ 
+ if [[ $COMMAND == "" ]] ; then
+  echo command not found!
+ fi 
+
+for i in $(seq 1 $NUMBER) ; do
+  if [[ $COMMAND -eq 1 ]] ; then
+    echo $(COMMAND)
+   fi
+done    
+
+
+
+
+
