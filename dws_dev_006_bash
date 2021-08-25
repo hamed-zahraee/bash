@@ -44,21 +44,6 @@ case $RES in
 esac
 
 
- if [[ $# -ne 0 ]] ; then
-  TRY-COMMAND=$*
- fi
- 
- if [[ $COMMAND == "" ]] ; then
-  echo command not found!
- fi 
-
-for i in $(seq 1 $NUMBER) ; do
-  if [[ $COMMAND -eq 1 ]] ; then
-    echo $(COMMAND)
-   fi
-done    
-
-
 
 
 
